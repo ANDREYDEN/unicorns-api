@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require('fs')
 const app = express();
 const swaggerUi = require("swagger-ui-express");
 const swaggerJSDoc = require("swagger-jsdoc");
@@ -35,6 +36,12 @@ const options = {
   apis: ["./index.js", "./src/*.js", "./src/auth/*.js"],
 };
 const swaggerSpec = swaggerJSDoc(options);
+const swaggerSpecData = JSON.stringify(swaggerSpec, null, 4)
+fs.writeFile(
+  './postman/schemas/schema.json', 
+  swaggerSpecData, 
+  err => err && console.log(`Error while persisting schema: ${err.message}`)
+)
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(bodyParser.json());
 
