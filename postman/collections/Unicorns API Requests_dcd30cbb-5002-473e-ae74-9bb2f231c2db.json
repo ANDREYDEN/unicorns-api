@@ -1,0 +1,280 @@
+{
+    "info": {
+        "_postman_id": "b7b8553b-abb8-457f-9a4a-809a757c624b",
+        "name": "Unicorns API Requests",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "/swagger",
+            "id": "8bb594b0-0721-483d-99b6-82ec1fa47b9a",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/swagger",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "swagger"
+                    ]
+                },
+                "description": "get this swagger doc"
+            },
+            "response": [
+                {
+                    "id": "a89f7a92-57e5-417c-b73c-7c360beac875",
+                    "name": "returns a swagger doc with all of the endpoints",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/swagger",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "swagger"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "/unicorns",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "c961174a-6962-43f4-aaac-7fae1eb121fd",
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "e94ca14c-b854-42f2-bcdb-cbd4583e9f8e",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/unicorns",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "unicorns"
+                    ]
+                },
+                "description": "get some unicorns"
+            },
+            "response": []
+        },
+        {
+            "name": "/unicorns",
+            "id": "66ce343b-cd99-4e50-ba3d-4975c7e225de",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"hello\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/unicorns",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "unicorns"
+                    ]
+                },
+                "description": "add a unicorn"
+            },
+            "response": [
+                {
+                    "id": "87448b4c-c2d6-49b1-8749-55f70e5f4d28",
+                    "name": "the add was performed successfuly",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"Super Unicorn\",\n  \"age\": 33\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/unicorns",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "unicorns"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        },
+        {
+            "name": "/auth/login",
+            "id": "3c2279bb-e1cb-4f29-9576-357c87afd1b3",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"username\": \"unicorn\",\n  \"password\": \"tacos\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/auth/login",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "auth",
+                        "login"
+                    ]
+                },
+                "description": "Authenticates a user"
+            },
+            "response": [
+                {
+                    "id": "4466a117-049e-4419-b622-ed9659b50f03",
+                    "name": "Returns a mysterious string.",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"username\": \"tempor cupidatat ut sit\",\n  \"password\": \"ad\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/auth/login",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "Text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{jwt}}",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "d98e57ab-c5d1-4439-b066-5ebce2c0ad9d",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "2c66f19f-4264-440a-b1dc-fdddd004f523",
+                "type": "text/javascript",
+                "exec": [
+                    "if (pm.request.url.getPath() === '/auth/login' && pm.response.status === 'OK') {",
+                    "    pm.environment.set('jwt', pm.response.json().token)",
+                    "}"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "fd19b710-069a-4b13-9ad4-9cc2a2c40a92",
+            "key": "baseUrl",
+            "value": "/",
+            "type": "string"
+        }
+    ]
+}

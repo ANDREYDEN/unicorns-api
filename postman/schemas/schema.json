@@ -1,0 +1,88 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Unicorns API",
+        "version": "1.0.0",
+        "description": "The most magical API"
+    },
+    "paths": {
+        "/swagger": {
+            "get": {
+                "description": "get this swagger doc",
+                "responses": {
+                    "200": {
+                        "description": "returns a swagger doc with all of the endpoints"
+                    }
+                }
+            }
+        },
+        "/unicorns": {
+            "get": {
+                "description": "get some unicorns",
+                "responses": {
+                    "200": {
+                        "description": "returns a list of unicorns"
+                    }
+                }
+            },
+            "post": {
+                "description": "add a unicorn",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Super Unicorn",
+                                    "age": 33
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "the add was performed successfuly"
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "description": "Authenticates a user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returns a mysterious string."
+                    }
+                }
+            }
+        }
+    },
+    "components": {},
+    "tags": []
+}
