@@ -49,7 +49,7 @@
                     }
                 },
                 "responses": {
-                    "201": {
+                    "200": {
                         "description": "the add was performed successfuly"
                     }
                 }

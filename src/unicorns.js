@@ -47,7 +47,7 @@ router.get("/", (req, res) => {
  *               name: Super Unicorn
  *               age: 33
  *     responses:
- *       201:
+ *       200:
  *         description: the add was performed successfuly
  */
 router.post("/", (req, res) => {
@@ -63,7 +63,7 @@ router.post("/", (req, res) => {
 
   unicorns.push({ name, age })
 
-  res.sendStatus(201)
+  res.sendStatus(200)
 });
 
 module.exports = router
