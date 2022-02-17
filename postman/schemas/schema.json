@@ -6,7 +6,7 @@
         "description": "The most magical API"
     },
     "paths": {
-        "/swagger": {
+        "/openapi": {
             "get": {
                 "description": "get this swagger doc",
                 "responses": {

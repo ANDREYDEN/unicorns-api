@@ -1,7 +1,8 @@
 {
     "info": {
-        "_postman_id": "b7b8553b-abb8-457f-9a4a-809a757c624b",
-        "name": "Unicorns API Requests",
+        "_postman_id": "7ec411b1-cef0-466e-b031-9d417200bac3",
+        "name": "Unicorns Docs",
+        "description": "The most magical API",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
@@ -10,19 +11,7 @@
             "item": [
                 {
                     "name": "/unicorns",
-                    "event": [
-                        {
-                            "listen": "prerequest",
-                            "script": {
-                                "id": "c961174a-6962-43f4-aaac-7fae1eb121fd",
-                                "exec": [
-                                    ""
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "id": "e94ca14c-b854-42f2-bcdb-cbd4583e9f8e",
+                    "id": "0f3bded3-4fbe-4206-ba44-aad28343ffae",
                     "request": {
                         "method": "GET",
                         "header": [],
@@ -37,31 +26,41 @@
                         },
                         "description": "get some unicorns"
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "id": "206dc1a8-0f90-464a-bd15-b718deeded4a",
+                            "name": "returns a list of unicorns",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/unicorns",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "unicorns"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "text",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": ""
+                        }
+                    ]
                 },
                 {
                     "name": "/unicorns",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "id": "309bfae1-4f9e-49b9-98ea-aabce64df353",
-                                "exec": [
-                                    "pm.test(\"Returns an error if name is missing\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.error).not.to.be.null;",
-                                    "    pm.response.to.have.status(400)",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Successful POST request\", function () {",
-                                    "    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "id": "66ce343b-cd99-4e50-ba3d-4975c7e225de",
+                    "id": "8f2abf53-ff8c-41a0-a719-0026e205fd37",
                     "protocolProfileBehavior": {
                         "disableBodyPruning": true
                     },
@@ -75,7 +74,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"name\": \"hello\",\n  \"age\": 12\n}",
+                            "raw": "{\n  \"name\": \"Super Unicorn\",\n  \"age\": 33\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -95,7 +94,7 @@
                     },
                     "response": [
                         {
-                            "id": "87448b4c-c2d6-49b1-8749-55f70e5f4d28",
+                            "id": "22dda461-ac37-4e3f-b660-dfa35a592f18",
                             "name": "the add was performed successfuly",
                             "originalRequest": {
                                 "method": "POST",
@@ -121,7 +120,7 @@
                             },
                             "status": "OK",
                             "code": 200,
-                            "_postman_previewlanguage": "Text",
+                            "_postman_previewlanguage": "text",
                             "header": [
                                 {
                                     "key": "Content-Type",
@@ -135,28 +134,28 @@
                     ]
                 }
             ],
-            "id": "34a89d6a-c7a0-4894-9e2f-faf7340b12a1"
+            "id": "6798cae2-f150-4bc3-aab6-8b0281b49e44"
         },
         {
-            "name": "/openapi",
-            "id": "8bb594b0-0721-483d-99b6-82ec1fa47b9a",
+            "name": "/swagger",
+            "id": "e5ac5b3a-135c-45b1-bc28-34b7dbad4e51",
             "request": {
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{baseUrl}}/opeanapi",
+                    "raw": "{{baseUrl}}/swagger",
                     "host": [
                         "{{baseUrl}}"
                     ],
                     "path": [
-                        "opeanapi"
+                        "swagger"
                     ]
                 },
                 "description": "get this swagger doc"
             },
             "response": [
                 {
-                    "id": "a89f7a92-57e5-417c-b73c-7c360beac875",
+                    "id": "9fb3a6b8-ba6a-423c-aa02-5f0a91458831",
                     "name": "returns a swagger doc with all of the endpoints",
                     "originalRequest": {
                         "method": "GET",
@@ -173,7 +172,7 @@
                     },
                     "status": "OK",
                     "code": 200,
-                    "_postman_previewlanguage": "Text",
+                    "_postman_previewlanguage": "text",
                     "header": [
                         {
                             "key": "Content-Type",
@@ -188,7 +187,10 @@
         },
         {
             "name": "/auth/login",
-            "id": "3c2279bb-e1cb-4f29-9576-357c87afd1b3",
+            "id": "d2ddb032-4b23-4ff0-a90d-5a40cfb3cd99",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
             "request": {
                 "method": "POST",
                 "header": [
@@ -199,7 +201,7 @@
                 ],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n  \"username\": \"unicorn\",\n  \"password\": \"tacos\"\n}",
+                    "raw": "{\n  \"username\": \"sed labore elit\",\n  \"password\": \"fugiat eiusmod in\"\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -220,14 +222,14 @@
             },
             "response": [
                 {
-                    "id": "4466a117-049e-4419-b622-ed9659b50f03",
+                    "id": "72182b5f-73dc-47fb-950c-549ee44afb7d",
                     "name": "Returns a mysterious string.",
                     "originalRequest": {
                         "method": "POST",
                         "header": [],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"username\": \"tempor cupidatat ut sit\",\n  \"password\": \"ad\"\n}",
+                            "raw": "{\n  \"username\": \"sed labore elit\",\n  \"password\": \"fugiat eiusmod in\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -247,7 +249,7 @@
                     },
                     "status": "OK",
                     "code": 200,
-                    "_postman_previewlanguage": "Text",
+                    "_postman_previewlanguage": "text",
                     "header": [
                         {
                             "key": "Content-Type",
@@ -261,21 +263,11 @@
             ]
         }
     ],
-    "auth": {
-        "type": "bearer",
-        "bearer": [
-            {
-                "key": "token",
-                "value": "{{jwt}}",
-                "type": "string"
-            }
-        ]
-    },
     "event": [
         {
             "listen": "prerequest",
             "script": {
-                "id": "d98e57ab-c5d1-4439-b066-5ebce2c0ad9d",
+                "id": "440fcb5a-8685-4c84-a636-edaf83f6dcef",
                 "type": "text/javascript",
                 "exec": [
                     ""
@@ -285,21 +277,19 @@
         {
             "listen": "test",
             "script": {
-                "id": "2c66f19f-4264-440a-b1dc-fdddd004f523",
+                "id": "063cfb03-1723-4797-9b22-cc30b2b966fe",
                 "type": "text/javascript",
                 "exec": [
-                    "if (pm.request.url.getPath() === '/auth/login' && pm.response.status === 'OK') {",
-                    "    pm.environment.set('jwt', pm.response.json().token)",
-                    "}"
+                    ""
                 ]
             }
         }
     ],
     "variable": [
         {
-            "id": "fd19b710-069a-4b13-9ad4-9cc2a2c40a92",
+            "id": "878f1b4d-2221-4c9a-b6a7-3bba6091e7ba",
             "key": "baseUrl",
-            "value": "/",
+            "value": "example.com",
             "type": "string"
         }
     ]
